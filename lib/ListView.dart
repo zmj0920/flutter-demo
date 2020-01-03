@@ -25,7 +25,12 @@ class HomeContent1 extends StatelessWidget {
     return Container(
       height: 180,
       child: ListView(
+        //排列方式，
         scrollDirection: Axis.horizontal,
+        //内边距
+        padding: EdgeInsets.all(20),
+        //反转
+        reverse: true,
         children: <Widget>[
           Container(
             width: 180.0,           
@@ -58,11 +63,6 @@ class HomeContent1 extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
 
 //远程加载列表
 class HomeContent extends StatelessWidget {
