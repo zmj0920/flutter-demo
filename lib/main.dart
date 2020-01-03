@@ -5,26 +5,75 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final wordPair = new WordPair.random();
     return MaterialApp(
       title: 'Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('首页'),
-        ),
-        body: Center(
-            child: Text(
-          'Dart是由谷歌开发的计算机编程语言,它可以被用于web、服务器、移动应用 和物联网等领域的开发。 Dart诞生于2011年，号称要取代JavaScript 要学Flutter的话我们必须首先得会Dart',
-          textAlign: TextAlign.left,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 3,
-          style: TextStyle(
-            fontSize: 25.0,
-            color: Colors.red,
-            // decoration: TextDecoration.underline,
-            // decorationStyle: TextDecorationStyle.solid,
+          appBar: AppBar(
+            title: Text('首页'),
           ),
-        )),
+          body: HomeContent()),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+          child: Container(
+            child: FlatButton(
+         child: Text("路由跳转"),
+         textColor: Colors.blue,
+         onPressed: () {
+          //导航到新路由   
+          Navigator.push( context,
+           MaterialPageRoute(builder: (context) {
+              return NewRoute();
+           }));
+          },
+         ),
+            // 对齐方式
+             alignment: Alignment.topCenter,
+              height: 300.0,
+              width: 300.0,
+              //盒子装饰
+              decoration: BoxDecoration(
+                //背景颜色
+                color: Colors.yellow,
+                //边框设置
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 2.0,
+                  style:BorderStyle.solid
+                ),
+                //圆角
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),    //圆形
+                )
+              ),
+               padding:EdgeInsets.fromLTRB(10, 20, 30, 10),
+              // padding:EdgeInsets.fromLTRB(10, 30, 5, 0)
+              margin: EdgeInsets.fromLTRB(10, 30, 5, 0),
+              //旋转
+              //  transform:Matrix4.translationValues(100,0,0)
+              //  transform:Matrix4.rotationZ(0.3)
+               transform:Matrix4.diagonal3Values(1.2, 1, 1)
+          ),
+    );
+  }
+  
+}
+
+
+class NewRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New route"),
+      ),
+      body: Center(
+        child: Text("This is new route"),
       ),
     );
   }
