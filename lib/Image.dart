@@ -26,16 +26,25 @@ class HomeContent extends StatelessWidget {
           //   'images/a.jpeg',
           //   fit: BoxFit.cover,
           // ),
+          //原型图片
+           child: ClipOval(
+            child: Image.network(              
+              'http://www.ionic.wang/statics/index/images/ionic4.png',
+              height: 100,
+              width: 100,
+              fit: BoxFit.cover,
+            ),
+        ),
           width: 300,
           height: 300,
           //背景图片
-          decoration: BoxDecoration(
-            color: Colors.blueAccent,
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg"),
-                fit: BoxFit.cover),
-          )
+          // decoration: BoxDecoration(
+          //   color: Colors.blueAccent,
+          //   image: DecorationImage(
+          //       image: NetworkImage(
+          //           "https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg"),
+          //       fit: BoxFit.cover),
+          // )
           // child: Image.network('http://www.ionic.wang/statics/index/images/ionic4.png',
           //  //图片的对齐方式
           // alignment:Alignment.center,
