@@ -18,21 +18,22 @@ class LayoutDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: Row(
-          children: <Widget>[
-            Expanded(
-              child:   Container(
-                height: 180,
-                color: Colors.orange,
-              ),
-            )
-          ],
-        ), 
-        ),
+          SizedBox(height: 10),
+           Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  height: 180,
+                  child: Image.network(
+                      "https://www.itying.com/images/flutter/2.png",
+                     fit: BoxFit.fill
+                      ),
+                ),
+              )
+            ],
+          ),
         SizedBox(height: 10),
-        Row(
+       Row(
           children: <Widget>[
             Expanded(
               flex: 2,
@@ -46,11 +47,12 @@ class LayoutDemo extends StatelessWidget {
               flex: 1,
               child: Container(
                 height: 180,
-                child: Column(
+                child: ListView(
                   children: <Widget>[
                     Container(
                       height: 85,
                       child: Image.network("https://www.itying.com/images/flutter/3.png",fit: BoxFit.cover),
+
                     ),
                     SizedBox(height: 10),
                     Container(
@@ -61,6 +63,7 @@ class LayoutDemo extends StatelessWidget {
                 )
               )
             ),
+
           ],
         )
       ],
