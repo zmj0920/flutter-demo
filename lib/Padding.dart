@@ -22,10 +22,14 @@ class LayoutDemo extends StatelessWidget {
         crossAxisCount: 2,
         childAspectRatio: 1.7,
         children: <Widget>[
-          Padding(
+          GestureDetector(child: Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
             child: Image.network('https://www.itying.com/images/flutter/1.png',
                 fit: BoxFit.cover),
+          ), 
+          onTap:(){
+            print('点击');
+          }
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
