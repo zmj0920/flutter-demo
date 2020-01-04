@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 class LayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       //主轴的排序方式
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       //次轴的排序方式
