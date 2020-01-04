@@ -16,28 +16,28 @@ class MyApp extends StatelessWidget {
 class LayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       //主轴的排序方式
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       //次轴的排序方式
-        crossAxisAlignment: CrossAxisAlignment.end,     //用的比较少
+      crossAxisAlignment: CrossAxisAlignment.end, //用的比较少
       children: <Widget>[
-        Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.pink,
+        Expanded(
+          flex: 1,
+          child: Container(
+            height: 100.0,
+            width: 100.0,
+            color: Colors.pink,
+          ),
         ),
-          Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.red,
+         Expanded(
+          flex: 2,
+          child: Container(
+            height: 100.0,
+            width: 100.0,
+            color: Colors.blue,
+          ),
         ),
-          Container(
-          height: 100.0,
-          width: 100.0,
-          color: Colors.blue,
-        ),
-        
       ],
     );
   }
