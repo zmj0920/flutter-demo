@@ -21,3 +21,7 @@
 ## iOS发布
 ### flutter build ios --release
 ### Product -> Archive
+
+https://github.com/phoenixsky/fun_android_flutter
+
+https://github.com/zhaochengxiang/flutter_lychee
