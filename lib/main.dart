@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:dio/dio.dart';
+import 'dart:convert';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,31 +14,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LayoutDemo extends StatelessWidget {
+ class LayoutDemo extends StatelessWidget {
+
+  test() async {
+    Response response;
+    Dio dio = Dio();
+     response = await dio.get("https://nest.521em.cn/user/find");
+     print(response.data.toString());
+    // json.encode()
+    // json.decode()
+  }
+
   @override
   Widget build(BuildContext context) {
+    this.test();
     return Center(
-      child:  Container(
-            height: 400,
-            width: 300,
-            color: Colors.red,
-            child: Stack(
-              children: <Widget>[
-                Positioned(
-                  left: 10,
-                  child: Icon(Icons.home,size: 40,color: Colors.white),
-                ),
-                Positioned(
-                 bottom: 0,
-                 left: 100,
-                  child: Icon(Icons.search,size: 30,color: Colors.white),
-                ),
-                Positioned(
-                  right: 0,
-                  child: Icon(Icons.settings_applications,size: 30,color: Colors.white),
-                )
-              ],
+      child: Container(
+        height: 400,
+        width: 300,
+        color: Colors.red,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left: 10,
+              child: Icon(Icons.home, size: 40, color: Colors.white),
             ),
+            Positioned(
+              bottom: 0,
+              left: 100,
+              child: Icon(Icons.search, size: 30, color: Colors.white),
+            ),
+            Positioned(
+              right: 0,
+              child: Icon(Icons.settings_applications,
+                  size: 30, color: Colors.white),
+            )
+          ],
+        ),
       ),
     );
   }
