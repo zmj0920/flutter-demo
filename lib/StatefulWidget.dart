@@ -16,6 +16,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//StatefulWidget 是有状态组件，持有的状态可能在 widget 生命周期改变。通俗的讲：如果我
+//们想改变页面中的数据的话这个时候就需要用到 StatefulWidget
+
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -28,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+
       children: <Widget>[
         Column(
           children: this.list.map((value){

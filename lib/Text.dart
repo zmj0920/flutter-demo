@@ -51,7 +51,8 @@ class HomeContent extends StatelessWidget {
            //文字装饰线颜色
           decorationColor:Colors.blue,
         ),
-      )),
+      )
+      ),
     );
   }
 }

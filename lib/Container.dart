@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter',
       home: Scaffold(
           appBar: AppBar(
-            title: Text('首页'),
+            title: Text('Container'),
           ),
           body: HomeContent()),
     );
