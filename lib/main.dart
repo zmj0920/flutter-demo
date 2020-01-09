@@ -1,70 +1,56 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'tabs/Home.dart';
-import 'tabs/Category.dart';
-import 'tabs/Setting.dart';
-void main() => runApp(MyApp());
+import 'package:provider/provider.dart';
+import 'provide/store.dart';
+import 'provide/counter.dart';
+void main() => runApp(provide(MyApp()));
 
-class MyApp extends StatelessWidget {  
+
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Tabs()
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-class Tabs extends StatefulWidget {
-  Tabs({Key key}) : super(key: key);
-  _TabsState createState() => _TabsState();
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _TabsState extends State<Tabs> {
-
-  int _currentIndex=0;
-  List _pageList=[
-    HomePage(),
-    CategoryPage(),
-    SettingPage(),
-  ];
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final counterStore = Provider.of<Counter>(context);
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Demo"),
-        ),
-        body: this._pageList[this._currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          //配置对应的索引值选中
-          currentIndex: this._currentIndex,   
-          //触发事件
-          onTap: (int index){
-            //改变状态
-              setState(() {  
-                  this._currentIndex=index;
-              });
-          },
-          //icon的大小
-          iconSize:36.0,      
-          //选中的颜色 
-          fixedColor:Colors.red,   
-          //配置底部tabs可以有多个按钮 fixed或shifting
-          type:BottomNavigationBarType.fixed,   
-         // 底部导航条按钮集合
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text("首页")
-            ),
-             BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              title: Text("分类")
-            ),
-            
-             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              title: Text("设置")
-            )
+      appBar: AppBar(title: Text(widget.title)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('You have pushed the button this many times:'),
+           // Text(Counter.value.toString()),
+           
           ],
         ),
-      );
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+        
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }

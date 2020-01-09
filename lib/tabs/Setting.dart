@@ -19,7 +19,7 @@ class _SettingPageState extends State<SettingPage> {
     return ListView(
       children: <Widget>[
         ListTile(
-          title: Text("$title"),
+          title: Text("$this.title"),
         ),
         ListTile(
           title: Text("我是一个文本"),
