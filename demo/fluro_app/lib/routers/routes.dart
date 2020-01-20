@@ -3,7 +3,6 @@ import 'package:fluro/fluro.dart';
 import './router_handler.dart';
 
 class Routes {
-  static String root = '/';
   static String indexPage = '/indexPage';
   static String normalPage = '/normalPage';
   static String routingReference = '/routingReference';

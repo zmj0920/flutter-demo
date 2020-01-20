@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.settings),
               onPressed: (){
-
               },
             )
           ],
