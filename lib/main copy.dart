@@ -1,14 +1,9 @@
-import 'dart:async';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'index.dart';
-import 'package:provider/provider.dart';
-import 'provide/counter.dart';
+
 
 void main() {
-
-
-  runApp(provide(MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
