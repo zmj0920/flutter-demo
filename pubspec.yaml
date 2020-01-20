@@ -27,6 +27,12 @@ dependencies:
   #provide: ^1.0.2
   provider: ^4.0.1
 
+    # 引导页
+  intro_views_flutter: ^2.8.0
+
+  video_player: ^0.10.5+2
+
+  chewie: ^0.9.8+1
   
 dev_dependencies:
   flutter_test:
